@@ -17,5 +17,5 @@ public interface ProductInterestRateRepository extends JpaRepository<ProductInte
     // Query to find the latest interest rate for a specific product
     // LIMIT 1 is implied by returning an Optional<ProductInterestRate>
     @Query("SELECT p FROM ProductInterestRate p WHERE p.product = :product ORDER BY p.updatedDate DESC")
-    Optional<ProductInterestRate> findLatestByProduct(DepositProduct product);
+    ProductInterestRate findLatestByProduct(DepositProduct product);
 }
